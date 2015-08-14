@@ -1,0 +1,38 @@
+#
+# toggle conky for bar
+# Thursday, 02 April 2015 14:25 IST
+
+# conky settings
+
+background no
+update_interval 1
+cpu_avg_samples 1
+total_run_times 0
+override_utf8_locale yes
+short_units yes
+pad_percents 2
+top_name_width 9
+uppercase no
+out_to_console yes
+out_to_x no
+
+# icons from stlarch font
+# cpu  ram  temp  net   ac bat_full  bat_emp 
+# cpu  ram  temp  net   ac bat_full  bat_emp
+
+TEXT
+S\
+${if_existing /tmp/bartoggle 1}%{F\#FF6C6C6C A:toggleinfo.sh:}%{A}\
+%{F\#FFb55f20} %{F-}%{F\#d0d0d0}${execpi 3600 checkupdates | wc -l}%{F-}\
+%{F\#FF799286 A:dzen_popup_toggle.sh sysinfo:}  %{F-} %{F\#d0d0d0}${cpu cpu0}%%{A} \
+%{F\#FF7d4b4f A:dzen_popup_toggle.sh diskinfo:} %{F-} %{F\#d0d0d0}${mem} %{A}\
+${else}%{F\#FF6C6C6C A:toggleinfo.sh:} + %{A}${endif}\
+%{F\#FF6C6C6C}${if_match "${acpiacadapter}" == "on-line"}\ 
+%{F\#FF829336} %{F-} ${if_match ${battery_percent BAT1} == 100}${else}\
+${battery_percent BAT1}%% ${endif}${else}\
+${if_match ${battery_percent BAT1} <= 30}\
+%{F\#FF829336} %{F-} ${else}\
+%{F\#FF829336} %{F-} ${endif}%{F\#d0d0d0}${battery_percent BAT1}% ${endif}\
+%{F\#6c6c6c} %{F-}%{F\#FFbaa549} %{F-}%{F\#d0d0d0}${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6 | tr -d "[,]"} %{F-}\
+%{F\#FF5f6774} %{F\#ffd0d0d0 A:dzen_popup_toggle.sh calendar:} ${time %a,%d %b}%{F-} %{F\#d0d0d0}${time %H:%M}%{A}\
+

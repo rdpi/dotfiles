@@ -1,0 +1,38 @@
+!zhuli colorscheme, forked from julie
+
+! special
+*.foreground:   #CCCCCC
+*.background:   #151515
+*.cursorColor:  #CCCCCC
+
+! black
+*.color0:       #101010
+*.color8:       #404040
+
+! red
+*.color1:       #953331
+*.color9:       #8d4a48
+
+! green
+*.color2:       #546a29
+*.color10:      #7e9960
+
+! yellow
+*.color3:       #909737
+*.color11:      #9ca554
+
+! blue
+*.color4:       #385e6b
+*.color12:      #5c737c
+
+! magenta
+*.color5:       #7f355e
+*.color13:      #95618b
+
+! cyan
+*.color6:       #34676f
+*.color14:      #5d858a
+
+! white
+*.color7:       #dddddd
+*.color15:      #dddddd

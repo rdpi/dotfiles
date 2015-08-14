@@ -1,0 +1,62 @@
+# bspwm panel config
+
+geometry="1366x16+0+0"
+
+FONT1="-*-terminus-*-*-normal-*-12-*-*-*-*-*-iso10646-*"
+#FONT1="dejavu sans mono-8"
+#FONT1="tewi-12"
+FONT2="-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+FONT3="-benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1"
+
+PAD=" "
+LPAD="    "
+
+# color definitions
+
+BAR_BG="#FF2d2d2d"
+BAR_FG="#FFdbdbdb"
+
+F_O_FG=${BAR_FG}
+F_O_BG="#FFd74b3a"
+F_F_FG="#FFdbdbdb"
+F_F_BG=${BAR_BG}
+F_U_FG="#FFFF8700"
+F_U_BG=${BAR_BG}
+O_FG="#FFd74b3a"
+O_BG=${BAR_BG}
+F_FG="#FF444444"
+F_BG=${BAR_BG}
+U_FG="#FFFF8700"
+U_BG=${BAR_BG}
+#CLOCK_FG="#FFc7bda4"
+#CLOCK_BG="#FFd74b3a"
+#LAYOUT_FG="#FFAAAAAA"
+#LAYOUT_BG="#FF505050"
+#STATUS_FG="#FFA3A6AB"
+#STATUS_BG=${BAR_BG}
+TITLE_FG="#FFd74b3a"
+TITLE_BG=${BAR_BG}
+
+# Height of underlines / overlines
+LINEHEIGHT="3"
+
+# Panel geometry
+PANEL_HEIGHT=14
+PANEL_WIDTH=''
+PANEL_GEOMETRY="${PANEL_WIDTH}x${PANEL_HEIGHT}+0+0"
+
+# Notification geometry
+NOTIFY_HEIGHT=$PANEL_HEIGHT
+NOTIFY_WIDTH=135
+NOTIFY_GEOMETRY="${NOTIFY_WIDTH}x${NOTIFY_HEIGHT}+0+0"
+
+# Duration of notifications
+DURATION=2
+
+# Volume change clip
+CLIP="/usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
+# Length of volume bar
+BAR_LENGTH=20
+BAR_CHAR='='
+
+

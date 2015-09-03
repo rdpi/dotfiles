@@ -19,6 +19,6 @@ do
             notify-send "Battery Full"
         fi
     fi
-    sleep 180
+    sleep 120
 done
 

@@ -1,5 +1,7 @@
 #! /bin/bash
-
+#
+# Script to monitor battery charge, and notify when full or low
+ 
 while true
 do
     state=` acpi | awk '{print $3}'`

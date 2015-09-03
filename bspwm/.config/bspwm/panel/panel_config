@@ -15,7 +15,7 @@ LPAD="    "
 
 # Color definitions
 
-color= "$HOME/.colors/skyline"
+color="$HOME/.colors/skyline"
 
 BAR_BG="#FF171717"
 BAR_FG="#FFDBD8CF"
@@ -35,17 +35,17 @@ U_BG=${BAR_BG}
 TITLE_FG="#FFd0d0d0"
 TITLE_BG=${BAR_BG}
 
-BG=$(cat color | grep -i background | tail -c 8)
-TEXTCOLOR=$(cat color | grep -i foreground | tail -c 8)
+BG=$(cat $color | grep -i background | tail -c 8)
+TEXTCOLOR=$(cat $color | grep -i foreground | tail -c 8)
 
-BLACK=$(cat color | grep -i color8 | tail -c 8)
-RED=$(cat color | grep -i color9 | tail -c 8)
-GREEN=$(cat color | grep -i color10 | tail -c 8)
-YELLOW=$(cat color | grep -i color11 | tail -c 8)
-BLUE=$(cat color | grep -i color12 | tail -c 8)
-MAGENTA=$(cat color | grep -i color13 | tail -c 8)
-CYAN=$(cat color | grep -i color14 | tail -c 8)
-WHITE=$(cat color | grep -i color15 | tail -c 8)
+BLACK=$(cat $color | grep -i color8 | tail -c 8)
+RED=$(cat $color | grep -i color9 | tail -c 8)
+GREEN=$(cat $color | grep -i color10 | tail -c 8)
+YELLOW=$(cat $color | grep -i color11 | tail -c 8)
+BLUE=$(cat $color | grep -i color12 | tail -c 8)
+MAGENTA=$(cat $color | grep -i color13 | tail -c 8)
+CYAN=$(cat $color | grep -i color14 | tail -c 8)
+WHITE=$(cat $color | grep -i color15 | tail -c 8)
 
 
 

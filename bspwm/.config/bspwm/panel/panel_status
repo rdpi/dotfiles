@@ -19,8 +19,28 @@ source $(dirname $0)/panel_config
     }
     
     batt() {
+        battstate=` acpi | awk '{print $3}'`
+        batticon=""
         batt=$(acpi | cut -d ',' -f 2 | awk '{key=$0; getline; print key "" $0;}' | cut -d ' ' -f 2 | cut -d '%' -f 1)
-        echo "%{B$BG}%{F$GREEN} %{B-}%{F-}%{F$TEXTCOLOR} ${batt}%"
+        if [ $battstate = "Discharging," ];
+            then
+            batticon=""
+            if [ $batt -le 50 ]; then
+                batticon=""
+            fi
+            if [ $batt -le 20 ]; then
+                batticon=""
+            fi
+            if [ $batt -le 10 ]; then
+                batticon=""
+            fi
+        elif [ $battstate = "Charging," ]; then
+            batticon=""
+        else
+            batticon=""
+        fi
+
+        echo "%{B$BG}%{F$GREEN} $batticon%{B-}%{F-}%{F$TEXTCOLOR} ${batt}%"
     }
 
     clock() {
@@ -29,8 +49,19 @@ source $(dirname $0)/panel_config
     }
 
     vol() {
-        vol=$(amixer get Master | sed -nr '$ s:.*\[(.+%)].*:\1:p')
-        echo "%{B$BG}%{F$YELLOW} %{B-}%{F-}%{F$TEXTCOLOR} ${vol}"
+        vol=$(amixer get Master | sed -nr '$ s:.*\[(.+%)].*:\1:p' | tr -d "%")
+        volicon=""
+        if [ $vol -gt 0 ]; then
+            volicon=""
+        fi
+        if [ $vol -gt 50 ]; then
+            volicon=""
+        fi
+        if [ $vol -gt 75 ]; then
+            volicon=""
+        fi
+
+        echo "%{B$BG}%{F$YELLOW} $volicon%{B-}%{F-}%{F$TEXTCOLOR} ${vol}%"
      }
 
     while :; do

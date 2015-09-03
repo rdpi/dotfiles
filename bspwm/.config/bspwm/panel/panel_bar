@@ -66,8 +66,13 @@ while read -r line ; do
 
                         mus() {
                             mus=$(mpc current)
+                            state=$(mpc | awk 'FNR == 2 {print $1}')
+                            stateicon=""
                             if [[ $mus ]]; then
-                                echo "%{B$BG}%{F$RED}  %{B-}%{F-}%{F$TEXTCOLOR} ${mus}"
+                                if [ $state = "[paused]" ]; then
+                                    stateicon=""
+                                fi
+                                echo "%{B$BG}%{F$RED} $stateicon %{B-}%{F-}%{F$TEXTCOLOR} ${mus}"
                             else
                             echo
                             fi

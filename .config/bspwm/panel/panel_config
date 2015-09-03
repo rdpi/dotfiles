@@ -1,0 +1,54 @@
+# bspwm panel configuration file
+
+# Set the position and demensions for lemonbar
+geometry="1346x16+10+10" 
+
+# Fonts
+FONT1="-*-terminus-*-*-normal-*-12-*-*-*-*-*-iso10646-*"
+#FONT1="dejavu sans mono-8"
+#FONT1="source code pro-9"
+FONT2="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+
+# Padding 
+PAD=" "
+LPAD="    "
+
+# Color definitions
+
+color= "$HOME/.colors/skyline"
+
+BAR_BG="#FF171717"
+BAR_FG="#FFDBD8CF"
+
+F_O_FG=${BAR_FG}
+F_O_BG="#FFFF6E4B"
+F_F_FG="#FFe0dcb5"
+F_F_BG=${BAR_BG}
+F_U_FG="#FFe0dcb5"
+F_U_BG=${BAR_BG}
+O_FG="#FF999999"
+O_BG=${BAR_BG}
+F_FG="#FF3f3f3f"
+F_BG=${BAR_BG}
+U_FG="#FF36394A"
+U_BG=${BAR_BG}
+TITLE_FG="#FFd0d0d0"
+TITLE_BG=${BAR_BG}
+
+BG=$(cat color | grep -i background | tail -c 8)
+TEXTCOLOR=$(cat color | grep -i foreground | tail -c 8)
+
+BLACK=$(cat color | grep -i color8 | tail -c 8)
+RED=$(cat color | grep -i color9 | tail -c 8)
+GREEN=$(cat color | grep -i color10 | tail -c 8)
+YELLOW=$(cat color | grep -i color11 | tail -c 8)
+BLUE=$(cat color | grep -i color12 | tail -c 8)
+MAGENTA=$(cat color | grep -i color13 | tail -c 8)
+CYAN=$(cat color | grep -i color14 | tail -c 8)
+WHITE=$(cat color | grep -i color15 | tail -c 8)
+
+
+
+
+
+

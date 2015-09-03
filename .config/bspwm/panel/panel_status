@@ -1,0 +1,40 @@
+#! /bin/sh
+#
+# Shows various status icons, listed below
+
+source $(dirname $0)/panel_config
+    sdd() {
+        sdd=$(df -h /dev/sda1 | awk 'FNR == 2{print $3}')
+        echo "%{B$BG}%{F$CYAN} %{B-}%{F-}%{F$TEXTCOLOR} ${sdd}"
+    }
+
+     hdd() {
+        hdd=$(df -h /dev/sdb10 | awk 'FNR == 2{print $3}')
+        echo "%{B$BG}%{F$BLACK} %{B-}%{F-}%{F$TEXTCOLOR} ${hdd}"
+    }
+
+    mem() {
+        mem=$(free -h | grep Mem: | awk '{print $3}')
+        echo "%{B$BG}%{F$MAGENTA} %{B-}%{F-}%{F$TEXTCOLOR} ${mem}"
+    }
+    
+    batt() {
+        batt=$(acpi | cut -d ',' -f 2 | awk '{key=$0; getline; print key "" $0;}' | cut -d ' ' -f 2 | cut -d '%' -f 1)
+        echo "%{B$BG}%{F$GREEN} %{B-}%{F-}%{F$TEXTCOLOR} ${batt}%"
+    }
+
+    clock() {
+        clock=$(date "+%a, %d %b %H:%M")
+        echo "%{B$BG}%{F$BLUE} %{B-}%{F-}%{F$TEXTCOLOR} ${clock}"
+    }
+
+    vol() {
+        vol=$(amixer get Master | sed -nr '$ s:.*\[(.+%)].*:\1:p')
+        echo "%{B$BG}%{F$YELLOW} %{B-}%{F-}%{F$TEXTCOLOR} ${vol}"
+     }
+
+    while :; do
+        printf "%s\n" "S$(sdd) $(hdd) $(mem) $(batt) $(vol) $(clock) "
+        sleep 0.5
+    done
+

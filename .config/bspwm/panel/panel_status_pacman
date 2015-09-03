@@ -1,0 +1,15 @@
+#! /bin/sh
+#
+# Seperate script to check pacman updates, so panel_staus isn't bottlenecked
+
+source $(dirname $0)/panel_config
+
+updates() {
+	update=$(checkupdates | wc -l)
+	echo "%{B$BG}%{F$RED} %{B-}%{F-}%{F$TEXTCOLOR} ${update}"
+}
+
+while :; do
+	printf "%s\n" "P$(updates)"
+        sleep 180
+done

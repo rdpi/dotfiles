@@ -16,6 +16,7 @@ urxvt*depth:			32
 urxvt*internalBorder: 		5
 urxvt*dynamicColors: on
 urxvt.urgentOnBell:  true
+URxvt*termName: rxvt
 URxvt.background: [93]#000000
 
 !FONTS

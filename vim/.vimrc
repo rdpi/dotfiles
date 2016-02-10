@@ -128,11 +128,11 @@ set pastetoggle=<F11>
 " Set colorscheme
 colorscheme default
 
-" Set comment text to white
-hi Comment ctermfg=7
+" Set comment text to dark
+hi Comment ctermfg=4
 
 " Set line number color
-hi LineNr ctermfg=0 ctermbg=none
+hi LineNr ctermfg=4 ctermbg=none
 
 "------------------------------------------------------------
 " Indentation options {{{1
@@ -163,3 +163,6 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+
+" unified clipboard between instances?
+set clipboard=unnamedplus

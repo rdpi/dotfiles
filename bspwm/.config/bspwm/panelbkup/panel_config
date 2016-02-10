@@ -17,10 +17,9 @@ LPAD="    "
 
 # Color definitions
 
-color="$HOME/.colors/schreddfixed"
+color="$HOME/.colors/skyline"
 
-BAR_BG="#FF2c2832"
-#BAR_BG="#171717"
+BAR_BG="#FF171717"
 BAR_FG="#FFDBD8CF"
 
 F_O_FG=${BAR_FG}
@@ -38,8 +37,7 @@ U_BG=${BAR_BG}
 TITLE_FG="#FFd0d0d0"
 TITLE_BG=${BAR_BG}
 
-#BG="#171717"
-BG="#2c2832"
+BG="#171717"
 TEXTCOLOR=$(cat $color | grep -i foreground | tail -c 8)
 
 BLACK=$(cat $color | grep -i color8 | tail -c 8)

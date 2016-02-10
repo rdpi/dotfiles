@@ -1,0 +1,55 @@
+# bspwm panel configuration file
+
+# Set the position and demensions for lemonbar
+geometry="1346x16+10+2" 
+
+# Fonts
+FONT1="-*-terminus-*-*-normal-*-12-*-*-*-*-*-iso10646-*"
+#FONT1="terminus-9"
+#FONT1="dejavu sans mono-8"
+#FONT1="Roboto Mono-8"
+FONT2="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+
+# Padding 
+PAD=" "
+LPAD="    "
+
+# Color definitions
+
+color="$HOME/.colors/skyline"
+
+BAR_BG="#00171717"
+BAR_FG="#FFb55f20"
+
+F_O_FG=${BAR_FG}
+F_O_BG="#FFFF6E4B"
+F_F_FG="#b55f20"
+F_F_BG=${BAR_BG}
+F_U_FG="#FFe0dcb5"
+F_U_BG=${BAR_BG}
+O_FG="#FFa0a0a0"
+O_BG=${BAR_BG}
+F_FG="#FF000000)"
+F_BG=${BAR_BG}
+U_FG="#FFb55f20"
+U_BG=${BAR_BG}
+TITLE_FG="#FF000000"
+TITLE_BG=${BAR_BG}
+
+BG="#eeeeee"
+TEXTCOLOR="#000000"
+
+BLACK="#000000"
+RED="#000000"
+GREEN="#000000"
+YELLOW="#000000"
+BLUE="#000000"
+MAGENTA="#000000"
+CYAN="#000000"
+WHITE="#000000"
+
+
+
+
+
+

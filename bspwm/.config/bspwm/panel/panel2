@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# Script to start lemonbar
+# Script to start lemonbar (second panel)
 
 source $(dirname $0)/panel_config
 
@@ -23,7 +23,7 @@ sh ~/.config/bspwm/panel/panel_status  > "$PANEL_FIFO" &
 
 panel_bar < "$PANEL_FIFO" \
      | lemonbar -p \
-           -g "$geometry" \
+           -g "$geometry2" \
            -f "$FONT1" -f "$FONT2" -f "$FONT3"\
            -B "$BAR_BG" \
            -F "$BAR_FG" \

@@ -1,0 +1,27 @@
+#! /bin/sh
+#
+# bar input parser for bspwm 
+
+source $(dirname $0)/panel_config
+while read -r line ; do
+    case $line in
+        P*)
+            pacman="${line#?}"
+            ;;
+        S*)
+            sys_infos="${line#?}"
+            ;;
+        T*)
+            # window title
+            title=$(echo ${line#?} | sed 's^\(.\{40\}\).*^\1...^')
+            title="%{F$TITLE_FG} ${title} ${LPAD} %{F-}"
+            ;;
+        W*)
+            # bspwm internal state
+            wm_infos="${line#?}"
+    esac
+
+    printf "%s\n" "%{l}$wm_infos %{c}$title %{r}$pacman $sys_infos "
+done
+
+

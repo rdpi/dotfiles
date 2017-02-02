@@ -1,5 +1,5 @@
 [global]
-    font = Terminus 9
+    font = xos4 Terminus 9
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -114,7 +114,7 @@
     # Draw a line of "separatpr_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 10
+    separator_height = 1
     
     # Padding between text and separator.
     padding = 8
@@ -128,7 +128,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as an X color.
-    separator_color = foreground
+    separator_color = auto
     
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst

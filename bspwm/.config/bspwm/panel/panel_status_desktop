@@ -1,0 +1,56 @@
+#! /bin/sh
+#
+# bspwm internal state
+source $(dirname $0)/panel_config
+wm_infos(){
+ wm_infos=""
+ IFS=':'
+ set -- ${line#?}
+ while [ $# -gt 0 ] ; do
+    item=$1
+    case $item in
+        [OoFfUu]*)
+        # desktops
+        name=${item#?}
+        case $item in
+            O*)
+                # focused occupied desktop
+                FG=$F_O_FG
+                #BG=$F_O_BG
+            ;;
+            F*)
+                # focused free desktop
+                FG=$F_F_FG
+                BG=$F_F_BG
+            ;;
+            U*)
+                # focused urgent desktop
+                FG=$F_U_FG
+                BG=$F_U_BG
+            ;;
+            o*)
+                # occupied desktop
+                 FG=$O_FG
+                BG=$O_BG
+            ;;
+            f*)
+                # free desktop
+                FG=$F_FG
+                BG=$F_BG
+            ;;
+            u*)
+                # urgent desktop
+                FG=$U_FG
+                BG=$U_BG
+             ;;
+        esac
+        wm_infos="${wm_infos}%{F$FG B$BG A:bspc desktop -f ${name}:}${PAD}${name}${PAD}%{A B- F-}"
+    esac
+    shift
+ done
+}
+
+while :; do
+    printf "%s\n" "W$(wm_infos)"
+    sleep 0.5
+done

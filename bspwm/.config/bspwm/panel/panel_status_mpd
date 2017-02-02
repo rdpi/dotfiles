@@ -1,0 +1,25 @@
+#! /bin/sh
+#
+# Script to display mpd status
+
+source $(dirname $0)/panel_config
+
+mus() {
+    mus=$(mpc current)
+    state=$(mpc | awk 'FNR == 2 {print $1}')
+    stateicon=""
+    if [[ $mus ]]; then
+        if [ "$state" = "[paused]" ]; then
+            stateicon=""
+        fi
+        echo "%{B$BG}%{F$RED} $stateicon %{B-}%{F-}%{F$TEXTCOLOR} ${mus}"
+        else
+            echo
+    fi
+    return 
+}
+
+while :; do
+	printf "%s\n" "M$(mus)"
+        sleep 0.5
+done

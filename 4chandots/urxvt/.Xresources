@@ -1,0 +1,50 @@
+#include "~/.colors/schredd"
+
+! #########################################
+urxvt*perl-lib:			/usr/lib/urxvt/perl
+urxvt*perl-ext-common:		default,matcher,clipboard,font-size
+urxvt*perl-matcher: 		1
+urxvt*matcher-button: 		3
+urxvt*url-launcher:		/usr/bin/firefox
+urxvt*cursorUnderline: 0
+urxvt*letterspace: -100
+!urxvt*fading: 			10
+!urxvt*fadeColor: 		#000000	
+urxvt*cursorBlink:		true
+urxvt*scrollBar:		false
+urxvt*depth:			32 
+urxvt*internalBorder: 		5
+urxvt*dynamicColors: on
+urxvt.urgentOnBell:  true
+URxvt*termName: rxvt
+!URxvt.background: [100]#171717
+URxvt.background: [100]#2c2832
+
+!FONTS
+!*font: xft:DejaVuSansMono-9
+!*boldfont: xft:DejaVuSansMono:bold
+!*italicfont: xft:DejaVuSansMono-Oblique
+!*.letterSpace: -1
+!bitmap
+*.font:      -*-terminus-*-*-normal-*-12-*-*-*-*-*-iso10646-*
+*.boldfont:  -*-terminus-bold-*-*-*-12-*-*-*-*-*-*-*
+*.italicfont:-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+*.bolditalicfont:-*-terminus-bold-*-*-*-12-*-*-*-*-*-*-*
+
+!XFT FONTS
+!Xft.antialias:  1
+!Xft.autohint:   0
+!Xft.dpi:        92
+!Xft.hinting:    1
+!Xft.hintstyle:  hintfull
+!Xft.lcdfilter:  lcddefault
+!Xft.rgba:       rgb
+
+xclock*majorColor: #9a875f
+xclock*minorColor: #9a875f
+xclock*minuteColor: #9a875f
+xclock*hourColor: #9a875f
+xclock*secondColor: #9a875f
+
+
+

@@ -166,3 +166,9 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 " unified clipboard between instances?
 set clipboard=unnamedplus
+
+" pathogen.vim
+execute pathogen#infect()
+
+" spellcheck for .txt files
+autocmd BufRead,BufNewFile *.txt set spell

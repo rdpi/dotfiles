@@ -40,7 +40,7 @@ TITLE_BG=${BAR_BG}
 
 #BG="#171717"
 BG="#2c2832"
-TEXTCOLOR=$(cat $color | grep -i foreground | tail -c 8)
+TEXTCOLOR="#FFDBD8CF"
 
 BLACK=$(cat $color | grep -i color8 | tail -c 8)
 RED=$(cat $color | grep -i color9 | tail -c 8)

@@ -4,7 +4,8 @@
 
 source $(dirname $0)/panel_config
 
-if [ $(pgrep -cx bspwm_panel.sh) -gt 1 ] ; then
+source $(dirname $0)/profile
+if [ $(pgrep -cx lemonbar) -gt 0 ] ; then
     printf "%s\n" "The panel is already running." >&2
     exit 1
 fi
@@ -14,17 +15,18 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo "$PANEL_FIFO"
 
-bspc control --subscribe > "$PANEL_FIFO" &
+bspc subscribe > "$PANEL_FIFO" &
 
-xtitle -sf 'T%s' > "$PANEL_FIFO" &
+xtitle -sf 'T%s\n' > "$PANEL_FIFO" &
 
+sh ~/.config/bspwm/panel/panel_status_mpd > "$PANEL_FIFO" &
 sh ~/.config/bspwm/panel/panel_status_pacman > "$PANEL_FIFO" &
 sh ~/.config/bspwm/panel/panel_status  > "$PANEL_FIFO" &
 
 panel_bar < "$PANEL_FIFO" \
-     | lemonbar -p \
+     | lemonbar -p -d \
            -g "$geometry" \
-           -f "$FONT1" -f "$FONT2" -f "$FONT3"\
+           -f "$FONT1" -f "$FONT2"\
            -B "$BAR_BG" \
            -F "$BAR_FG" \
            | while read line; do eval "$line"; done &

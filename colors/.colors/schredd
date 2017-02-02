@@ -3,7 +3,7 @@
 
 #define bg      #2c2832
 #define fg      #dbd7b8
-#define blk     #332d38
+#define blk     #2c2832
 #define bblk    #6f6b75
 #define red     #bf6257
 #define grn     #82a37c

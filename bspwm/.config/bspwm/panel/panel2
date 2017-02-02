@@ -3,7 +3,7 @@
 # Script to start lemonbar (second panel)
 
 source $(dirname $0)/panel_config
-
+source $(dirname $0)/profile2
 if [ $(pgrep -cx bspwm_panel.sh) -gt 1 ] ; then
     printf "%s\n" "The panel is already running." >&2
     exit 1
@@ -16,7 +16,7 @@ mkfifo "$PANEL_FIFO"
 
 bspc control --subscribe > "$PANEL_FIFO" &
 
-xtitle -sf 'T%s' > "$PANEL_FIFO" &
+xtitle -sf 'T%s\n' > "$PANEL_FIFO" &
 
 sh ~/.config/bspwm/panel/panel_status_pacman > "$PANEL_FIFO" &
 sh ~/.config/bspwm/panel/panel_status  > "$PANEL_FIFO" &

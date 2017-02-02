@@ -34,8 +34,12 @@ xsetroot -cursor_name left_ptr &
 xrdb ~/.Xresources
 xset +fp /usr/share/fonts/local
 xset fp rehash
+xmodmap ~/.xmodmaprc
 hsetroot -solid "#6d6a80"
 xsetroot -cursor_name left_ptr &
 compton &
 sxhkd &
+mpd &
+pcmanfm -d &
+export PATH=$PATH:/home/rdpi/.config/bspwm/panel/
 exec bspwm

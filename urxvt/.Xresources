@@ -1,4 +1,4 @@
-#include "/home/rdpi/.colors/schredd"
+#include "/home/rdpi/.colors/ivoryred"
 
 ! #########################################
 urxvt*perl-lib:			/usr/lib/urxvt/perl
@@ -17,11 +17,11 @@ urxvt*internalBorder: 		5
 urxvt*dynamicColors: on
 urxvt.urgentOnBell:  true
 URxvt*termName: rxvt
-!URxvt.background: [100]#171717
-URxvt.background: [100]#2c2832
+!URxvt.background: [80]#171717
+URxvt.background: [90]#402525
 
 !FONTS
-!*font: xft:DejaVuSansMono-9
+!*font: xft:Anonymice Powerline:size=12
 !*boldfont: xft:DejaVuSansMono:bold
 !*italicfont: xft:DejaVuSansMono-Oblique
 !*.letterSpace: -1

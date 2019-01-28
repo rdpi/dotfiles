@@ -36,10 +36,13 @@ xset +fp /usr/share/fonts/local
 xset fp rehash
 xmodmap ~/.xmodmaprc
 hsetroot -solid "#6d6a80"
+hsetroot -solid "#eeeeee"
+hsetroot -fill .wallpaper.png
 xsetroot -cursor_name left_ptr &
 compton &
 sxhkd &
 mpd &
 pcmanfm -d &
 export PATH=$PATH:/home/rdpi/.config/bspwm/panel/
+export _JAVA_AWT_WM_NONREPARENTING=2
 exec bspwm

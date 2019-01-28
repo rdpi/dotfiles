@@ -1,7 +1,7 @@
 # bspwm panel configuration file
 
 # Set the position and demensions for lemonbar
-geometry="1346x16+10+10" 
+geometry="1900x16+10+10" 
 geometry2="1346x16+1370+10"
 
 # Fonts
@@ -17,9 +17,9 @@ LPAD="    "
 
 # Color definitions
 
-color="$HOME/.colors/schreddfixed"
+color="$HOME/.colors/ivoryred"
 
-BAR_BG="#FF2c2832"
+BAR_BG="#FF402525"
 #BAR_BG="#171717"
 BAR_FG="#FFDBD8CF"
 
@@ -39,7 +39,7 @@ TITLE_FG="#FFd0d0d0"
 TITLE_BG=${BAR_BG}
 
 #BG="#171717"
-BG="#2c2832"
+BG="#402525"
 TEXTCOLOR="#FFDBD8CF"
 
 BLACK=$(cat $color | grep -i color8 | tail -c 8)

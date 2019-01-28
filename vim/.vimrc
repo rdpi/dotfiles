@@ -32,7 +32,7 @@ syntax on
 " Vim with default settings does not allow easy switching between multiple files
 " in the same editor window. Users can use multiple split windows or multiple
 " tab pages to edit multiple files, but it is still best to enable an option to
-" allow easier switching between files.
+" allow easier switching between file
 "
 " One such option is the 'hidden' option, which allows you to re-use the same
 " window and switch from an unsaved buffer without saving it first. Also allows
@@ -141,14 +141,14 @@ hi LineNr ctermfg=4 ctermbg=none
  
 " Indentation settings for using 4 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+"set shiftwidth=4
+"set softtabstop=4
+"set expandtab
  
 " Indentation settings for using hard tabs for indent. Display tabs as
 " four characters wide.
-"set shiftwidth=4
-"set tabstop=4
+set shiftwidth=4
+set tabstop=4
  
  
 "------------------------------------------------------------
@@ -172,3 +172,14 @@ execute pathogen#infect()
 
 " spellcheck for .txt files
 autocmd BufRead,BufNewFile *.txt set spell
+
+" lightline
+set laststatus=2
+
+if !has('gui_running')
+  set t_Co=256
+endif
+
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }

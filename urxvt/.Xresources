@@ -46,5 +46,6 @@ xclock*minuteColor: #9a875f
 xclock*hourColor: #9a875f
 xclock*secondColor: #9a875f
 
-
+!DPI
+!Xft.dpi: 144
 

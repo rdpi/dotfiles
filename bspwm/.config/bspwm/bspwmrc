@@ -49,6 +49,4 @@ dbus-launch nm-applet &
 # battery notification script
 sh ~/scripts/battery_monitor.sh &
 # linux feed reader
-#liferea &
-xterm &
-urxvt &
+firefox &
